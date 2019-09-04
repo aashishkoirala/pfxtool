@@ -1,0 +1,52 @@
+trigger:
+- master
+
+stages:
+- stage: Build
+  displayName: 'Build And Test'
+  jobs:
+  - job: Build
+    displayName: 'Build And Test'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - script: dotnet build
+      displayName: 'Build Code'
+    - script: dotnet test
+      displayName: 'Run Tests'
+    - task: CopyFiles@1
+      displayName: 'Copy NUPKG To Staging'
+      inputs:
+        SourceFolder: $(Build.SourcesDirectory)/src/bin/Debug
+        TargetFolder: $(Build.StagingDirectory)
+        Contents: '*.nupkg'
+    - publish: $(Build.StagingDirectory)
+      displayName: 'Publish NUPKG As Artifact'
+      artifact: nupkg
+
+- stage: Publish
+  displayName: 'Publish Global Tool'
+  dependsOn: Build
+  jobs:
+  - deployment: Publish
+    displayName: 'Publish Global Tool'
+    pool:
+     vmImage: 'ubuntu-latest'
+    environment: 'Production'
+    strategy:
+     runOnce:
+       deploy:
+         steps:
+         - task: DownloadPipelineArtifact@1
+           displayName: 'Download NUPKG Artifact'
+           inputs:
+             buildType: 'current'
+             artifactName: 'nupkg'
+             targetPath: '$(Pipeline.Workspace)'
+         - task: NuGetCommand@2
+           displayName: 'Publish To NuGet'
+           inputs:
+             command: 'push'
+             packagesToPush: '$(Pipeline.Workspace)/*.nupkg'
+             nuGetFeedType: 'external'
+             publishFeedCredentials: 'NuGet'

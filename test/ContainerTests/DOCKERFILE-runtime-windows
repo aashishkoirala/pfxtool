@@ -1,0 +1,12 @@
+# Place this in a directory with TestCertificate.pfx.
+# Install pfxtool using dotnet tool install -g pfxtool
+# Then copy the contents of <user-profile>/.dotnet/tools/.store/pfxtool/1.0.0/pfxtool/1.0.0/tools/netcoreapp2.2
+# to <your_dir>/pfxtool.
+# Then build the image and run it.
+FROM mcr.microsoft.com/dotnet/core/runtime:2.2-nanoserver-1803
+WORKDIR /app
+COPY TestCertificate.pfx ./
+COPY ./pfxtool/ ./pfxtool/
+WORKDIR /app/pfxtool
+RUN dotnet pfxtool.dll import --file ../TestCertificate.pfx --password Password123 --scope user
+ENTRYPOINT ["dotnet", "pfxtool.dll", "list", "--scope", "user"]

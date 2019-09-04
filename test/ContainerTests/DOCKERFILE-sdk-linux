@@ -1,0 +1,7 @@
+# Place this in a directory alongside TestCerticate.pfx, then build the image and run it.
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2-alpine3.9
+WORKDIR /app
+COPY TestCertificate.pfx ./
+ENV PATH "$PATH:/root/.dotnet/tools"
+RUN dotnet tool install pfxtool -g && pfxtool import --file TestCertificate.pfx --password Password123 --scope user
+ENTRYPOINT ["pfxtool", "list", "--scope", "user"]

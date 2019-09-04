@@ -1,18 +1,12 @@
-# PFX Tool
-**by [Aashish Koirala](https://www.aashishkoirala.com/)**
-
-[![Build Status](https://dev.azure.com/aashishkoirala/PFX%20Tool/_apis/build/status/aashishkoirala.pfxtool?branchName=master)](https://dev.azure.com/aashishkoirala/PFX%20Tool/_build/latest?definitionId=3&branchName=master)
-
-**PFX Tool** is a command line tool that does stuff with and around PFX certificates.
-
-## Installation
-**PFX Tool** is a [.NET Core Global Tool](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools) that is built to run against the .NET Core 2.2 runtime. To install:
+---
+title: PFX Tool
+---
+**PFX Tool** is a command line tool that does stuff with and around PFX certificates. Built for .NET Core developers that want to deal with PFX files without depending on PowerShell or certoc. It is a [.NET Core Global Tool](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools) that is built to run against the .NET Core 2.2 runtime. Tested on Windows and on Docker Containers based on Windows NanoServer and Alpine Linux. To install:
 
 ``` shell
 dotnet tool install pfxtool -g
 ```
 
-## Usage
 The basic usage is as follows:
 
 ``` shell
@@ -25,10 +19,6 @@ The following commands are currently supported:
 - **remove**: Remove an existing certificate and keys from a certificate store.
 - **list**: List all certificates in a certificate store or in a PFX file.
 - **show**: Show details of a certificate in a certificate store or in a PFX file.
-
-The following commands are not currently supported but are planned:
-- **create**: Create a PFX out of given certificate and key files (a-la *openssl*).
-- **explode**: Explode a PFX into its constituent certificate and key files.
 
 For details, run `pfxtool` without any options to get usage instructions.
 
@@ -45,12 +35,3 @@ Export certificate and key with thumbprint *ABCDEF* from the machine's root cert
 ``` shell
 pfxtool export --file test.pfx --password Test123 --scope machine --store root
 ```
-
-## Issues
-To submit any issues, use the **Issues** section in this repository.
-
-## Contributing
-Feel free to fork and send PRs - this is pretty small and I haven't had a chance to set up guidelines.
-
-## License
-See [LICENSE](LICENSE).

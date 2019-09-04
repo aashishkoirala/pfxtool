@@ -1,0 +1,169 @@
+# Aashish's Coding Style
+
+# This is the ultimate file, nothing overrides this
+root = true
+
+# All files
+[*]
+
+# UTF-8
+charset = utf-8
+
+# Use hard tabs (= 4 spaces) for indentation
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+# Use CRLF as newline, and do not insert newline at end of file, also trim trailing whitespace
+end_of_line = crlf
+insert_final_newline = false
+trim_trailing_whitespace = true
+
+# C#
+[*.cs]
+
+# Discourage the use of "this."
+dotnet_style_qualification_for_event = false:warning
+dotnet_style_qualification_for_field = false:warning
+dotnet_style_qualification_for_method = false:warning
+dotnet_style_qualification_for_property = false:warning
+
+# Require Allman style braces (i.e. opening braces on new line)
+csharp_new_line_before_open_brace = all
+
+# Require new-line before most things
+csharp_new_line_before_catch = true
+csharp_new_line_before_else = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_anonymous_types = true
+csharp_new_line_before_members_in_object_initializers = true
+csharp_new_line_between_query_expression_clauses = true
+
+# Prefer the language keyword instead of type name where available (e.g. "string" not String, "int" not Int32)
+dotnet_style_predefined_type_for_locals_parameters_members = true:warning
+dotnet_style_predefined_type_for_member_access = true:warning
+
+# Parentheses options
+dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:warning
+dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:warning
+dotnet_style_parentheses_in_other_operators = never_if_unnecessary:warning
+dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:warning
+
+# Require explicit modifiers
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:silent
+
+# Encourage modern C# language features
+csharp_style_deconstructed_variable_declaration = true:warning
+csharp_style_inlined_variable_declaration = true:warning
+csharp_style_throw_expression = true:warning
+dotnet_style_coalesce_expression = true:warning
+dotnet_style_collection_initializer = true:warning
+dotnet_style_explicit_tuple_names = true:warning
+dotnet_style_null_propagation = true:warning
+dotnet_style_object_initializer = true:warning
+dotnet_style_prefer_auto_properties = true:warning
+dotnet_style_prefer_compound_assignment = true:warning
+dotnet_style_prefer_conditional_expression_over_assignment = true:warning
+dotnet_style_prefer_conditional_expression_over_return = true:warning
+dotnet_style_prefer_inferred_anonymous_type_member_names = true:warning
+dotnet_style_prefer_inferred_tuple_names = true:warning
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:warning
+
+# Encourage readonly fields where applicable
+dotnet_style_readonly_field = true:warning
+
+# "Gently" discourage unused parameters and unused values
+dotnet_code_quality_unused_parameters = all:suggestion
+csharp_style_unused_value_assignment_preference = discard_variable:suggestion
+csharp_style_unused_value_expression_statement_preference = discard_variable:suggestion
+
+# Encourage "var"
+csharp_style_var_elsewhere = true:warning
+csharp_style_var_for_built_in_types = true:warning
+csharp_style_var_when_type_is_apparent = true:warning
+
+# Encourage expression bodies over statements/code blocks
+csharp_style_expression_bodied_accessors = true:warning
+csharp_style_expression_bodied_constructors = true:warning
+csharp_style_expression_bodied_indexers = true:warning
+csharp_style_expression_bodied_lambdas = true:warning
+csharp_style_expression_bodied_local_functions = true:warning
+csharp_style_expression_bodied_methods = true:warning
+csharp_style_expression_bodied_operators = true:warning
+csharp_style_expression_bodied_properties = true:warning
+
+# Encourage pattern matching
+csharp_style_pattern_matching_over_as_with_null_check = true:warning
+csharp_style_pattern_matching_over_is_with_cast_check = true:warning
+
+# Encourage ?. instead of null check to invoke delegate
+csharp_style_conditional_delegate_call = true:suggestion
+
+# Preferred order of modifiers
+csharp_preferred_modifier_order = public,private,protected,internal,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,volatile,async
+
+# Prefer no braces when not needed
+csharp_prefer_braces = false:warning
+
+# Prefer "default" over "default(T)"
+csharp_prefer_simple_default_expression = true:warning
+
+# Prefer local function over anonymous function, prefer index and range operators
+csharp_style_pattern_local_over_anonymous_function = true:warning
+csharp_style_prefer_index_operator = true:warning
+csharp_style_prefer_range_operator = true:warning
+
+# Indentation options
+csharp_indent_block_contents = true
+csharp_indent_braces = false
+csharp_indent_case_contents = true
+csharp_indent_case_contents_when_block = true
+csharp_indent_labels = one_less_than_current
+csharp_indent_switch_labels = true
+
+# Allow single line blocks where needed (e.g. auto-property)
+csharp_preserve_single_line_blocks = true
+
+# Allow multiple statements on single line so as to not wrap simple if's.
+csharp_preserve_single_line_statements = true
+
+# Do not place System.* using directives before other using directives
+dotnet_sort_system_directives_first = false
+
+# Require a space before and after the colon for bases or interfaces in a type declaration
+csharp_space_after_colon_in_inheritance_clause = true
+csharp_space_before_colon_in_inheritance_clause = true
+
+# Space preferences
+csharp_space_after_cast = false
+csharp_space_after_comma = true
+csharp_space_after_dot = false
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_after_semicolon_in_for_statement = true
+csharp_space_around_binary_operators = before_and_after
+csharp_space_around_declaration_statements = false
+csharp_space_before_comma = false
+csharp_space_before_dot = false
+csharp_space_before_open_square_brackets = false
+csharp_space_before_semicolon_in_for_statement = false
+csharp_space_between_empty_square_brackets = false
+csharp_space_between_method_call_empty_parameter_list_parentheses = false
+csharp_space_between_method_call_name_and_opening_parenthesis = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
+csharp_space_between_method_declaration_name_and_open_parenthesis = false
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_parentheses = false
+csharp_space_between_square_brackets = false
+
+# C# Project Files
+[*.csproj]
+indent_size = 2
+
+# XML
+[*.xml]
+indent_size = 2
+
+# HTML
+[*.html]
+indent_size = 2

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AK.PfxTool", "src\AK.PfxTool.csproj", "{1528C917-BAC3-429D-9449-5D4BFB25E516}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AK.PfxTool.Tests", "test\AK.PfxTool.Tests.csproj", "{23C8B9DF-4D65-4576-9B64-7B1CB6971ECA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1528C917-BAC3-429D-9449-5D4BFB25E516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1528C917-BAC3-429D-9449-5D4BFB25E516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1528C917-BAC3-429D-9449-5D4BFB25E516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1528C917-BAC3-429D-9449-5D4BFB25E516}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23C8B9DF-4D65-4576-9B64-7B1CB6971ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23C8B9DF-4D65-4576-9B64-7B1CB6971ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23C8B9DF-4D65-4576-9B64-7B1CB6971ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23C8B9DF-4D65-4576-9B64-7B1CB6971ECA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCE45EEA-5D98-4E9A-B489-69C118235CE6}
+	EndGlobalSection
+EndGlobal

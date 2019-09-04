@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	<OutputType>Exe</OutputType>
+	<TargetFramework>netcoreapp2.2</TargetFramework>
+	<RootNamespace>AK.PfxTool</RootNamespace>
+	<AssemblyName>pfxtool</AssemblyName>
+	<Version>1.0.0</Version>
+	<PackageId>pfxtool</PackageId>
+	<IsPackable>true</IsPackable>
+	<PackAsTool>true</PackAsTool>
+	<PackageVersion>1.0.0</PackageVersion>
+	<Authors>Aashish Koirala</Authors>
+	<Company>Aashish Koirala</Company>
+	<Product>PFX Tool</Product>
+	<Description>PFX Tool - Does stuff with and around PFX certificates.</Description>
+	<Copyright>Copyright (C) Aashish Koirala, 2019.</Copyright>
+	<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+	<PackageProjectUrl>https://pfxtool.aashishkoirala.com/</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/aashishkoirala/pfxtool</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<PackageTags>pfx;certificate;x509;pkcs12</PackageTags>
+	<NeutralLanguage>en-US</NeutralLanguage>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<LangVersion>latest</LangVersion>
+	<PackageIconUrl>https://pfxtool.aashishkoirala.com/assets/favicon.ico</PackageIconUrl>
+  </PropertyGroup>
+  <ItemGroup>
+	<PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+	<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.0" />
+	<PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="2.2.0" />
+  </ItemGroup>
+</Project>

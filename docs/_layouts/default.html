@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	{% seo title=false %}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#157878">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+	<link rel="icon" href="{{ 'assets/favicon.ico' }}" type="image/x-icon">
+	<title>PFX Tool by Aashish Koirala</title>
+</head>
+<body>
+	<header class="page-header" role="banner">
+		<h1 class="project-name"><img src="{{ 'assets/logo.png' }}" width="60" height="60" style="width: 60px; height: 60px">&nbsp;PFX Tool</h1>
+		<h2 class="project-tagline">Does Stuff With and Around PFX Certificates</h2>
+		<h2 class="project-tagline">
+			By <a href="https://www.aashishkoirala.com" style="color: #aabbff">Aashish Koirala</a>
+			&nbsp;|&nbsp;
+			<a href="https://github.com/aashishkoirala/pfxtool" style="color: #aabbff">View on GitHub</a>
+		</h2>
+	</header>
+	<main id="content" class="main-content" role="main">
+		{{ content }}
+	</main>
+</body>
+</html>
